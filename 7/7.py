@@ -1,5 +1,7 @@
 #!/bin/python3
 
+import sys
+
 def getsize(directory):
     tempsize=0
     for j in fs:
@@ -11,9 +13,11 @@ fs = {}
 limit=100000
 filesystemsize=70000000
 updatesize=30000000
-print("Which file?")
-fileinput= input()
-f = open(fileinput,'r')
+try:
+    f = open(str(sys.argv[1]),'r')
+except:
+    print('Could not open file "'+str(sys.argv[1])+'".')
+    exit()
 lines = f.readlines()
 wd = []
 
