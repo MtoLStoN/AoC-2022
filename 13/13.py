@@ -67,9 +67,7 @@ swapped=True
 while swapped:
     swapped=False
     for i in range(0,len(packages)-1):
-        if right_order(packages[i],packages[i+1]):
-            i+=1
-        else:
+        if not right_order(packages[i],packages[i+1]):
             tmp_package=packages[i]
             packages[i]=packages[i+1]
             packages[i+1]=tmp_package
